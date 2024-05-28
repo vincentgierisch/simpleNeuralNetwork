@@ -1,6 +1,6 @@
 # Simple Neural Network
 
-A ~~hopefully~~ simple implementation of a neuronal network by just using the standard libraries.
+A ~~hopefully~~ simple implementation of a neural network by just using the standard libraries.
 ## Installation
 
 ````
