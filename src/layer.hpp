@@ -4,16 +4,21 @@
 #include <eigen3/Eigen/Dense>
 
 #include "activationFunction.hpp"
+#include <iostream>
 
-class NetworkLayer {
+class Layer {
     private:
         unsigned int _size;
     public:
         Eigen::Vector<float, Eigen::Dynamic> bias;
         ActivationFunction* activationFunction;
-        unsigned int getSize() {return this->_size;};
+        unsigned const int getSize() {return this->_size;};
 
-        NetworkLayer() {};
-        NetworkLayer(unsigned int size);
+        Layer() {};
+        Layer(unsigned int size, ActivationFunction*);
+        ~Layer();
+
+        // copy constructor
+        Layer(const Layer& obj);
 };
 #endif

@@ -4,21 +4,24 @@
 #include <vector>
 #include <string>
 #include <eigen3/Eigen/Dense>
-#include "networkLayer.hpp"
+#include "layer.hpp"
+
+#include <iostream>
 
 class NeuralNetwork {
     private:
-        std::vector<NetworkLayer> _layers;
+        std::vector<Layer> _layers;
         std::vector<Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic>> _weights;
+        std::vector<Eigen::Vector<float, Eigen::Dynamic>> _biases;
     public:
-        NeuralNetwork(std::vector<NetworkLayer> layers);
+        NeuralNetwork(std::vector<Layer>& layers);
 
-        void load(std::string path);
-        void save(std::string path);
+        /* void load(std::string path); */
+        /* void save(std::string path); */
         
 
         Eigen::Vector<float, Eigen::Dynamic> forwardPropagation(Eigen::Vector<float, Eigen::Dynamic>&);
 
-        ~NeuralNetwork();
+        ~NeuralNetwork(){};
 };
 #endif

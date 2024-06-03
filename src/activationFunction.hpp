@@ -7,8 +7,8 @@ class ActivationFunction {
     private:
 
     public:
-        ActivationFunction() {};
-        virtual Eigen::Vector<float, Eigen::Dynamic> calculate(Eigen::Vector<float, Eigen::Dynamic>) = 0;
-        ~ActivationFunction();
+        /* ActivationFunction() {}; */
+        virtual Eigen::Vector<float, Eigen::Dynamic> calculate(const Eigen::Vector<float, Eigen::Dynamic>&) = 0;
+        virtual ~ActivationFunction() = default;
 };
 #endif
